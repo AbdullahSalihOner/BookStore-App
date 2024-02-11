@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <h3>Categories</h3>
+    <ul class="sidebar-title" (click)="mainPage()"> All Categories</ul>
+    <ul>
+        @for (category  of categories; track $index) {
+            <li color ="primary" (click)="changeCategory(category)">{{ category }}</li>
+        }
+    </ul>
+  </div>
+  

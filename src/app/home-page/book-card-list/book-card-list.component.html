@@ -1,0 +1,22 @@
+
+<div class="container"  >
+    @for (book of books; track $index) {
+        <div class="card">
+            <div class="card-name">
+                <div class="name-div"> {{book.name}}</div>
+                <div>-</div>
+                <div> {{book.year}}</div>
+            </div>
+           
+            <div> {{book.author}}</div>
+            <div class="star-div">{{book.star}}</div>
+
+            <button class="btn btn-primary" (click)="addToCart(book)">Add Cart</button>
+
+        </div>
+        
+    }
+
+</div>
+
+  

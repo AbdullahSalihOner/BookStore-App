@@ -1,0 +1,12 @@
+
+
+
+
+<div class="container">
+    <app-sidebar (categorySelected)="getBooksByCatgeory($event)"></app-sidebar>
+    <div class="content">
+        <app-book-card-list [categoryName] = "categoryName" [books]="books"></app-book-card-list>
+        <app-book-table-list [books]="books"></app-book-table-list>
+    </div>
+</div>
+  
