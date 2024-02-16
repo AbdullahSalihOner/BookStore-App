@@ -1,0 +1,5 @@
+<div class="container">
+    @for (category of categories; track $index) {
+    <button mat-raised-button color="primary" (click)="handleCategory(category)"> {{ category }} </button>
+    }
+</div>

@@ -1,5 +1,5 @@
 <div class="container">
-    @for (book of bookList; track $index) {
+    @for (book of cartList; track $index) {
     <div class="field">
         <div class="name">
             <div class="form-name"> {{ book.name }} </div>
@@ -8,7 +8,7 @@
         </div>
         <div> {{ book.author }} </div>
         <div class="form-star"> {{ book.star }} </div>
-        <button (click)="addToCart(book)">Sepete Ekle</button>
+        
     </div>
     }
 </div>

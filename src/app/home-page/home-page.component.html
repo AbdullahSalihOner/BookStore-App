@@ -1,12 +1,3 @@
-
-
-
-
-<div class="container">
-    <app-sidebar (categorySelected)="getBooksByCatgeory($event)"></app-sidebar>
-    <div class="content">
-        <app-book-card-list [categoryName] = "categoryName" [books]="books"></app-book-card-list>
-        <app-book-table-list [books]="books"></app-book-table-list>
-    </div>
-</div>
-  
+<app-navbar [categories]="categories" (categoryName)="setBooksForCategories($event)"> </app-navbar>
+<button (click)="goToCart()">Sepete git</button>
+<app-book-card-list [bookList]="filteredBooks" (addCart)="addToCart($event)" ></app-book-card-list>
