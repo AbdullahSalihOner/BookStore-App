@@ -7,17 +7,27 @@ import { BookModel } from './home-page/home-page.component';
 })
 export class BookService {
 
-  subject = new Subject<BookModel[]>();
 
   constructor() { }
 
-  addCart(book: BookModel[]) {
-    this.subject.next(book);  
+  addCart(books: BookModel[]) {
+    const payload = JSON.stringify(books);
+    localStorage.setItem('cart', payload);
   }
 
   getCart() {
-    this.subject.subscribe((data) => {
-      console.log(data);
-    })
+    const response = localStorage.getItem('cart');
+  
+    if (response) {
+      // veriyi parse ederek tekrardan obje haline getiriyoruz(string -> obje)
+      return JSON.parse(response);
+    }
+    else {
+      return [];
+    }
+
   }
+
+
+  
 }

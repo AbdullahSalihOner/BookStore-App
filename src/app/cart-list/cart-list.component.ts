@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BookModel } from '../home-page/home-page.component';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -11,7 +12,15 @@ import { BookModel } from '../home-page/home-page.component';
 export class CartListComponent {
 
   cartList : BookModel[]  = [];
+
+  constructor( private _bookService: BookService) { }
+
   ngOnInit() {
-    this.cartList.push
+    this.cartList = this._bookService.getCart();
+   
+  }
+  removeFromCart(event: BookModel) {
+    this.cartList = this.cartList.filter((item: BookModel) => item.id !== event.id);
+    this._bookService.addCart(this.cartList);
   }
 }
